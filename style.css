@@ -1,7 +1,9 @@
 .body{
+    
 
 }
 .body--main{
+    
 
 }
 .body--aboutme{
@@ -11,24 +13,48 @@
 
 }
 .header{
-
+    display: grid;
+    min-height: 300px;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    
 }
 .header--main{
-
+    background-image: linear-gradient(#b3e0ff,  #0099ff);
+  
+    
+    
 }
+
 .header--articles{
 
 }
+.header__slunicko{
+    place-self: center;
+}
 .header__main-title{
+    place-self: center;
+    font-size: 3rem;
 
 }
 .header__subtitle{
+    place-self: center;
+    font-size: 2rem;
+    grid-column: span 3;
 
 }
 .articles{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    min-height: 500px;
+    gap: 2rem;
+    padding: 2rem;
 
 }
 .articles--beige{
+    background-color: beige;
 
 }
 .articles--brown{
@@ -38,27 +64,65 @@
 
 }
 .articles-banner{
+    align-self: stretch; 
 
 }
-.articles-banner--blue{
-
+.articles a {
+    font-size: 3rem;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 2rem;
+    color: #ffff1a;
 }
-.articles-banner--red{
+.articles-banner--train{
+
+    background-image: url("vlakj.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.articles-banner--children{
+    background-image: url("hradnipostel.jpg");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
 .articles-banner--small{
 
 }
 .articles__fotogalery{
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
 
 }
 .articles__tips{
 
 }
 .main-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    background-color: beige;
+    font-size: 1.5rem;
 
 }
-.main-text{
+.main-info-title{
+    text-decoration: underline;
+
+}
+.main-info-text1{
+    grid-row-start: 2;
+
+}
+.main-info-text2{
+    grid-row-start: 3;
 
 }
 .footer{
