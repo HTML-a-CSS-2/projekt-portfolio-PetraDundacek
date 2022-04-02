@@ -6,12 +6,12 @@
     background-color: beige;
 }
 
-}
-.body--aboutme{
 
+.body--aboutme{
+    background-color: rgb(66, 189, 238)
 }
 .body--articles{
-
+    background-color: rgb(206, 233, 162)
 }
 .header{
     display: grid;
@@ -30,6 +30,7 @@
 
 .header--articles{
 
+    background-image: linear-gradient(#76d18d,  #179e1e);
 }
 .header__slunicko{
     place-self: center;
@@ -38,6 +39,9 @@
     place-self: center;
     font-size: 3rem;
 
+}
+.header__main-title-articles{
+    grid-column: span 3;
 }
 .header__subtitle{
     place-self: center;
@@ -211,11 +215,18 @@ font-weight: bold;
 
 }
 .one-article{
-
+margin-top: 2rem;
 }
 .one-article__title{
-
+ text-decoration: underline;
+ font-size: 1.25rem;
+ color: black;
+ text-transform: uppercase;
 }
+.one-article__title:hover{
+    background-color: green;
+}
+
 .one-article__text{
     
 }
