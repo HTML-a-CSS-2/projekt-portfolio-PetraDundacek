@@ -1,15 +1,19 @@
 $headerFont: 'Square Peg',
 cursive;
+$headerTitleFontSize: 5rem;
 
 $footerColor: Wheat;
 $standardGap: 2rem;
 $articleTitleHover: green;
 $uppercaseTransform: uppercase;
 $secondaryColor: rgb(184, 129, 89);
-$articlesPagePadding: 1rem 3rem;
+$mainPagePadding: 2rem;
+$articlesPageArticlePadding: 1rem 3rem;
+$emailColor: #0040ff;
+$phoneColor: #ff8000;
 
 
-@mixin main-title {
+@mixin main-text-title {
     align-self: center;
     justify-self: center;
     text-decoration: underline;
@@ -25,6 +29,15 @@ $articlesPagePadding: 1rem 3rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+@mixin grid-for-banners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    min-height: 500px;
+    gap: $standardGap;
+    padding: $mainPagePadding;
 }
 
 
@@ -62,23 +75,32 @@ $articlesPagePadding: 1rem 3rem;
     }
 
     &--articles {
-        background-image: linear-gradient(#76d18d, #179e1e);
+        background-image: linear-gradient(#df9361, #552804);
     }
 
-    &__slunicko {
+    &__obrazek {
         place-self: center;
+        padding-top: 2rem;
     }
 
     &__main-title {
-        place-self: center;
-        font-size: 5rem;
+        place-self: start;
+        font-size: $headerTitleFontSize;
         text-transform: $uppercaseTransform;
 
     }
 
     &__main-title-articles {
+        place-self: start;
+        grid-column: span 2;
+        font-size: $headerTitleFontSize;
+        text-transform: $uppercaseTransform;
+    }
+
+    &__main-title-aboutme {
+        place-self: center;
         grid-column: span 3;
-        font-size: 5rem;
+        font-size: $headerTitleFontSize;
         text-transform: $uppercaseTransform;
     }
 
@@ -91,12 +113,7 @@ $articlesPagePadding: 1rem 3rem;
 
 
 .articles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    min-height: 500px;
-    gap: $standardGap;
-    padding: 2rem;
+    @include grid-for-banners;
 
     &--beige {
         background-color: beige;
@@ -144,6 +161,7 @@ $articlesPagePadding: 1rem 3rem;
 }
 
 .articles-banner {
+
     &--train {
 
         background-image: url("vlakj.jpg");
@@ -197,7 +215,7 @@ $articlesPagePadding: 1rem 3rem;
     font-size: 1.5rem;
 
     &__main-info-title {
-        @include main-title;
+        @include main-text-title;
 
     }
 
@@ -226,7 +244,7 @@ footer {
 
 .footer-box {
     font-size: 1.25rem;
-    padding: 2rem;
+    padding: $mainPagePadding;
     margin: 2rem;
     padding-top: 0rem;
 
@@ -250,10 +268,11 @@ footer {
     &__info-detail {
         &--phone {
             font-weight: bold;
+            color: $phoneColor;
         }
 
         &--email {
-            color: #0099ff;
+            color: $emailColor;
 
         }
     }
@@ -269,7 +288,7 @@ footer {
 
 
 .one-article {
-    padding: $articlesPagePadding;
+    padding: $articlesPageArticlePadding;
     display: flex;
     margin: 2rem 3rem 0rem 3rem;
     border: 1px solid black;
@@ -308,7 +327,7 @@ footer {
     grid-template-rows: 1fr 2fr;
 
     &__articles-info-title {
-        @include main-title;
+        @include main-text-title;
     }
 
     &__articles-info-text {
@@ -321,9 +340,26 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: $secondaryColor;
-    padding: $articlesPagePadding;
+    justify-content: center;
 
     &__one-img {
         padding: 2rem;
+
+    }
+}
+
+.aboutme-text {
+    @include main-text;
+}
+
+.footer-aboutme {
+    background-color: $footerColor;
+
+    &__email {
+        color: $emailColor;
+    }
+
+    &__phone {
+        color: $phoneColor;
     }
 }
