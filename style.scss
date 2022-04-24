@@ -4,7 +4,7 @@ cursive;
 $footerColor: Wheat;
 $standardGap: 2rem;
 $articleTitleHover: green;
-$uppercaseTransporm: uppercase;
+$uppercaseTransform: uppercase;
 $secondaryColor: rgb(184, 129, 89);
 
 
@@ -71,13 +71,14 @@ $secondaryColor: rgb(184, 129, 89);
     &__main-title {
         place-self: center;
         font-size: 5rem;
-        transform: $uppercaseTransporm;
+        text-transform: $uppercaseTransform;
 
     }
 
     &__main-title-articles {
         grid-column: span 3;
         font-size: 5rem;
+        text-transform: $uppercaseTransform;
     }
 
     &__subtitle {
@@ -125,7 +126,7 @@ $secondaryColor: rgb(184, 129, 89);
         font-size: 3rem;
         text-decoration: none;
         text-align: center;
-        text-transform: $uppercaseTransporm;
+        text-transform: $uppercaseTransform;
         padding-top: 2rem;
         color: #ffff1a;
     }
@@ -282,7 +283,7 @@ footer {
         text-decoration: underline;
         font-size: 1.3rem;
         color: black;
-        text-transform: $uppercaseTransporm;
+        text-transform: $uppercaseTransform;
     }
 
     &__title:hover {

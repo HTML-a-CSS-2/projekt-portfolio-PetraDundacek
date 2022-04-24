@@ -32,11 +32,12 @@
 .header__main-title {
   place-self: center;
   font-size: 5rem;
-  transform: uppercase;
+  text-transform: uppercase;
 }
 .header__main-title-articles {
   grid-column: span 3;
   font-size: 5rem;
+  text-transform: uppercase;
 }
 .header__subtitle {
   place-self: center;
