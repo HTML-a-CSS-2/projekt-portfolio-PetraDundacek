@@ -6,6 +6,7 @@ $standardGap: 2rem;
 $articleTitleHover: green;
 $uppercaseTransform: uppercase;
 $secondaryColor: rgb(184, 129, 89);
+$articlesPagePadding: 1rem 3rem;
 
 
 @mixin main-title {
@@ -268,7 +269,7 @@ footer {
 
 
 .one-article {
-    padding: 1rem 3rem;
+    padding: $articlesPagePadding;
     display: flex;
     margin: 2rem 3rem 0rem 3rem;
     border: 1px solid black;
@@ -313,6 +314,16 @@ footer {
     &__articles-info-text {
         @include main-text;
     }
+
 }
 
-.articles__img {}
+.articles-images {
+    display: flex;
+    flex-direction: row;
+    background-color: $secondaryColor;
+    padding: $articlesPagePadding;
+
+    &__one-img {
+        padding: 2rem;
+    }
+}

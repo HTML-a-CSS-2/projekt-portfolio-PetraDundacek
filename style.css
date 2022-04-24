@@ -230,4 +230,14 @@ footer {
   padding: 0rem 5rem 1rem;
   text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.articles-images {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(184, 129, 89);
+  padding: 1rem 3rem;
+}
+.articles-images__one-img {
+  padding: 2rem;
 }/*# sourceMappingURL=style.css.map */
