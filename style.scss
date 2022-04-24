@@ -1,19 +1,50 @@
 $headerFont: 'Square Peg',
 cursive;
+
 $footerColor: Wheat;
+$standardGap: 2rem;
+$articleTitleHover: green;
+$uppercaseTransporm: uppercase;
+$secondaryColor: rgb(184, 129, 89);
+
+
+@mixin main-title {
+    align-self: center;
+    justify-self: center;
+    text-decoration: underline;
+}
+
+@mixin main-text {
+    padding: 0rem 5rem 1rem;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin banner-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 
 
 .body {
+    min-width: 100%;
+    min-height: 100%;
+    ;
+
+
     &--main {
-        background-color: rgb(220, 245, 233);
+        background-color: rgb(245, 241, 220);
     }
 
     &--aboutme {
-        background-color: rgb(98, 171, 238)
+        background-color: rgb(98, 171, 238);
     }
 
     &--articles {
-        background-color: rgb(206, 233, 162)
+        background-color: rgb(255, 255, 204);
     }
 }
 
@@ -40,6 +71,7 @@ $footerColor: Wheat;
     &__main-title {
         place-self: center;
         font-size: 5rem;
+        transform: $uppercaseTransporm;
 
     }
 
@@ -61,7 +93,7 @@ $footerColor: Wheat;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     min-height: 500px;
-    gap: 2rem;
+    gap: $standardGap;
     padding: 2rem;
 
     &--beige {
@@ -70,7 +102,7 @@ $footerColor: Wheat;
     }
 
     &--brown {
-        background-color: rgb(184, 129, 89);
+        background-color: $secondaryColor;
 
     }
 
@@ -93,7 +125,7 @@ $footerColor: Wheat;
         font-size: 3rem;
         text-decoration: none;
         text-align: center;
-        text-transform: uppercase;
+        text-transform: $uppercaseTransporm;
         padding-top: 2rem;
         color: #ffff1a;
     }
@@ -113,42 +145,32 @@ $footerColor: Wheat;
     &--train {
 
         background-image: url("vlakj.jpg");
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @include banner-image;
     }
 
     &--children {
         background-image: url("hradnipostel.jpg");
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @include banner-image;
     }
 
     &--zdrava-lahev {
         background-image: url("zdravalahev.jpg");
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @include banner-image;
     }
+
 
     &--skryte-pribehy {
         background-image: url("skrytepribehy.png");
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @include banner-image;
     }
+
 }
 
 .fotogalery {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: minmax(25px, 50px) 3fr;
-    gap: 2rem;
+    gap: $standardGap;
     grid-column: span 2;
 
     &__title {
@@ -173,19 +195,19 @@ $footerColor: Wheat;
     font-size: 1.5rem;
 
     &__main-info-title {
-        align-self: center;
-        justify-self: center;
-        text-decoration: underline;
+        @include main-title;
 
     }
 
     &__main-info-text1 {
         grid-row-start: 2;
+        @include main-text;
 
     }
 
     &__main-info-text2 {
         grid-row-start: 3;
+        @include main-text;
 
     }
 }
@@ -245,18 +267,51 @@ footer {
 
 
 .one-article {
-    margin-top: 2rem;
+    padding: 1rem 3rem;
+    display: flex;
+    margin: 2rem 3rem 0rem 3rem;
+    border: 1px solid black;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
 
     &__title {
+        margin-top: 2rem;
         text-decoration: underline;
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         color: black;
-        text-transform: uppercase;
+        text-transform: $uppercaseTransporm;
     }
 
     &__title:hover {
-        background-color: green;
+        background-color: $articleTitleHover;
     }
 
-    &__text {}
+    &__text {
+        font-size: 1.1rem;
+    }
 }
+
+.one-article-image {
+    float: left;
+    align-self: flex-end;
+
+}
+
+.articles-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+
+    &__articles-info-title {
+        @include main-title;
+    }
+
+    &__articles-info-text {
+        @include main-text;
+    }
+}
+
+.articles__img {}
