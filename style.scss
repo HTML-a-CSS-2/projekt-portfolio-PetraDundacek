@@ -85,6 +85,7 @@ $phoneColor: #ff8000;
 
     &__main-title {
         place-self: start;
+        grid-column: span 2;
         font-size: $headerTitleFontSize;
         text-transform: $uppercaseTransform;
 
