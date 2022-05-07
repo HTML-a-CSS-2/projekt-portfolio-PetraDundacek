@@ -9,6 +9,7 @@ $uppercaseTransform: uppercase;
 $secondaryColor: rgb(184, 129, 89);
 $mainPagePadding: 2rem;
 $articlesPageArticlePadding: 1rem 3rem;
+$aboutmePagePadding: 2rem;
 $emailColor: #0040ff;
 $phoneColor: #ff8000;
 
@@ -40,10 +41,15 @@ $phoneColor: #ff8000;
     padding: $mainPagePadding;
 }
 
-
+.html {
+    margin: 0;
+    padding: 0;
+}
 
 
 .body {
+    margin: 0;
+    padding: 0;
     min-width: 100%;
     min-height: 100%;
     ;
@@ -349,9 +355,7 @@ footer {
     }
 }
 
-.aboutme-text {
-    @include main-text;
-}
+
 
 .footer-aboutme {
     background-color: $footerColor;
@@ -363,4 +367,30 @@ footer {
     &__phone {
         color: $phoneColor;
     }
+}
+
+.info-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: $standardGap;
+    padding: $aboutmePagePadding;
+
+    &__aboutme-text {
+        @include main-text;
+    }
+
+    &__aboutme__obrazek {
+        align-self: stretch;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .info-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+
 }

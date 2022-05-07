@@ -1,4 +1,11 @@
+.html {
+  margin: 0;
+  padding: 0;
+}
+
 .body {
+  margin: 0;
+  padding: 0;
   min-width: 100%;
   min-height: 100%;
 }
@@ -252,12 +259,6 @@ footer {
   padding: 2rem;
 }
 
-.aboutme-text {
-  padding: 0rem 5rem 1rem;
-  text-align: justify;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .footer-aboutme {
   background-color: Wheat;
 }
@@ -266,4 +267,28 @@ footer {
 }
 .footer-aboutme__phone {
   color: #ff8000;
+}
+
+.info-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+.info-box__aboutme-text {
+  padding: 0rem 5rem 1rem;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.info-box__aboutme__obrazek {
+  align-self: stretch;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
 }/*# sourceMappingURL=style.css.map */
