@@ -249,14 +249,14 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.articles-images {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(184, 129, 89);
-  justify-content: center;
+.articles-svg {
+  padding: 1rem 3rem;
+  height: 300px;
 }
-.articles-images__one-img {
-  padding: 2rem;
+
+.articles-svg img {
+  width: 100%;
+  max-height: 100%;
 }
 
 .footer-aboutme {
@@ -271,18 +271,21 @@ footer {
 
 .info-box {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1fr;
   gap: 2rem;
   padding: 2rem;
+  max-height: 800px;
 }
 .info-box__aboutme-text {
   padding: 0rem 5rem 1rem;
   text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: auto;
 }
-.info-box__aboutme__obrazek {
-  align-self: stretch;
+.info-box__aboutme-obrazek {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
