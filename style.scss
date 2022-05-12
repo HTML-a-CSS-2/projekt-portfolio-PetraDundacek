@@ -346,12 +346,12 @@ footer {
 .articles-svg {
     padding: $articlesPagePadding;
     height: 300px;
+    overflow: hidden;
 
 }
 
-.articles-svg img {
+.articles-svg picture {
     width: 100%;
-    max-height: 100%;
 }
 
 
