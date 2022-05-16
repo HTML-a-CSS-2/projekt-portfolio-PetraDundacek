@@ -294,4 +294,14 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
   }
+
+  .articles-svg {
+    padding-bottom: 75%;
+    overflow: unset;
+  }
+
+  .articles-svg picture {
+    width: 100%;
+    height: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
