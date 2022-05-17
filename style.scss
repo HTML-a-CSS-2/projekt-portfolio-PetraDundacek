@@ -1,5 +1,5 @@
 $headerFont: 'Square Peg',
-cursive;
+    cursive;
 $headerTitleFontSize: 5rem;
 
 $footerColor: Wheat;
@@ -8,7 +8,8 @@ $articleTitleHover: green;
 $uppercaseTransform: uppercase;
 $secondaryColor: rgb(184, 129, 89);
 $mainPagePadding: 2rem;
-$articlesPageArticlePadding: 1rem 3rem;
+$articlesPagePadding: 1rem 3rem;
+$aboutmePagePadding: 2rem;
 $emailColor: #0040ff;
 $phoneColor: #ff8000;
 
@@ -40,10 +41,15 @@ $phoneColor: #ff8000;
     padding: $mainPagePadding;
 }
 
-
+.html {
+    margin: 0;
+    padding: 0;
+}
 
 
 .body {
+    margin: 0;
+    padding: 0;
     min-width: 100%;
     min-height: 100%;
     ;
@@ -252,7 +258,7 @@ footer {
     &--contact {}
 
     &--logo {
-        background-image: url("slunicko.png");
+        background-image: url("frog.svg");
         background-repeat: no-repeat;
         background-position: center;
 
@@ -289,7 +295,7 @@ footer {
 
 
 .one-article {
-    padding: $articlesPageArticlePadding;
+    padding: $articlesPagePadding;
     display: flex;
     margin: 2rem 3rem 0rem 3rem;
     border: 1px solid black;
@@ -337,21 +343,19 @@ footer {
 
 }
 
-.articles-images {
-    display: flex;
-    flex-direction: row;
-    background-color: $secondaryColor;
-    justify-content: center;
+.articles-svg {
+    padding: $articlesPagePadding;
+    height: 300px;
+    overflow: hidden;
 
-    &__one-img {
-        padding: 2rem;
-
-    }
 }
 
-.aboutme-text {
-    @include main-text;
+.articles-svg picture {
+    width: 100%;
 }
+
+
+
 
 .footer-aboutme {
     background-color: $footerColor;
@@ -363,4 +367,45 @@ footer {
     &__phone {
         color: $phoneColor;
     }
+}
+
+.info-box {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: $standardGap;
+    padding: $aboutmePagePadding;
+    max-height: 800px;
+
+    &__aboutme-text {
+        @include main-text;
+        overflow: auto;
+    }
+
+    &__aboutme-obrazek {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .info-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+
+    .articles-svg {
+        padding-bottom: 75%;
+        overflow: unset;
+
+    }
+
+    .articles-svg picture {
+        width: 100%;
+        height: auto;
+    }
+
+
 }
