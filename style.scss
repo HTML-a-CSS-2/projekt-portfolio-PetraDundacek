@@ -1,0 +1,411 @@
+$headerFont: 'Square Peg',
+    cursive;
+$headerTitleFontSize: 5rem;
+
+$footerColor: Wheat;
+$standardGap: 2rem;
+$articleTitleHover: green;
+$uppercaseTransform: uppercase;
+$secondaryColor: rgb(184, 129, 89);
+$mainPagePadding: 2rem;
+$articlesPagePadding: 1rem 3rem;
+$aboutmePagePadding: 2rem;
+$emailColor: #0040ff;
+$phoneColor: #ff8000;
+
+
+@mixin main-text-title {
+    align-self: center;
+    justify-self: center;
+    text-decoration: underline;
+}
+
+@mixin main-text {
+    padding: 0rem 5rem 1rem;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin banner-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin grid-for-banners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    min-height: 500px;
+    gap: $standardGap;
+    padding: $mainPagePadding;
+}
+
+.html {
+    margin: 0;
+    padding: 0;
+}
+
+
+.body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    ;
+
+
+    &--main {
+        background-color: rgb(245, 241, 220);
+    }
+
+    &--aboutme {
+        background-color: rgb(98, 171, 238);
+    }
+
+    &--articles {
+        background-color: rgb(255, 255, 204);
+    }
+}
+
+.header {
+    display: grid;
+    min-height: 300px;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    font-family: $headerFont;
+
+    &--main {
+        background-image: linear-gradient(#b3e0ff, #0099ff);
+    }
+
+    &--articles {
+        background-image: linear-gradient(#df9361, #552804);
+    }
+
+    &__obrazek {
+        place-self: center;
+        padding-top: 2rem;
+    }
+
+    &__main-title {
+        place-self: start;
+        grid-column: span 2;
+        font-size: $headerTitleFontSize;
+        text-transform: $uppercaseTransform;
+
+    }
+
+    &__main-title-articles {
+        place-self: start;
+        grid-column: span 2;
+        font-size: $headerTitleFontSize;
+        text-transform: $uppercaseTransform;
+    }
+
+    &__main-title-aboutme {
+        place-self: center;
+        grid-column: span 3;
+        font-size: $headerTitleFontSize;
+        text-transform: $uppercaseTransform;
+    }
+
+    &__subtitle {
+        place-self: center;
+        font-size: 3rem;
+        grid-column: span 3;
+    }
+}
+
+
+.articles {
+    @include grid-for-banners;
+
+    &--beige {
+        background-color: beige;
+
+    }
+
+    &--brown {
+        background-color: $secondaryColor;
+
+    }
+
+    &--odsazeni {
+        margin: 2rem;
+
+    }
+
+    &--dark-khaki {
+        background-color: DarkKhaki;
+
+    }
+
+    &--banner {
+        align-self: stretch;
+
+    }
+
+    & a {
+        font-size: 3rem;
+        text-decoration: none;
+        text-align: center;
+        text-transform: $uppercaseTransform;
+        padding-top: 2rem;
+        color: #ffff1a;
+    }
+
+    &__tips {
+        font-size: 2rem;
+        align-self: center;
+        justify-self: center;
+        grid-column: span 2;
+        ;
+
+    }
+
+}
+
+.articles-banner {
+
+    &--train {
+
+        background-image: url("vlakj.jpg");
+        @include banner-image;
+    }
+
+    &--children {
+        background-image: url("hradnipostel.jpg");
+        @include banner-image;
+    }
+
+    &--zdrava-lahev {
+        background-image: url("zdravalahev.jpg");
+        @include banner-image;
+    }
+
+
+    &--skryte-pribehy {
+        background-image: url("skrytepribehy.png");
+        @include banner-image;
+    }
+
+}
+
+.fotogalery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: minmax(25px, 50px) 3fr;
+    gap: $standardGap;
+    grid-column: span 2;
+
+    &__title {
+        grid-column: span 5;
+        font-size: 2rem;
+        align-self: center;
+        justify-self: center;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.main-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    background-color: beige;
+    font-size: 1.5rem;
+
+    &__main-info-title {
+        @include main-text-title;
+
+    }
+
+    &__main-info-text1 {
+        grid-row-start: 2;
+        @include main-text;
+
+    }
+
+    &__main-info-text2 {
+        grid-row-start: 3;
+        @include main-text;
+
+    }
+}
+
+
+footer {
+    display: grid;
+    min-height: 300px;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $footerColor;
+    margin-top: 2rem;
+}
+
+.footer-box {
+    font-size: 1.25rem;
+    padding: $mainPagePadding;
+    margin: 2rem;
+    padding-top: 0rem;
+
+    &--contact {}
+
+    &--logo {
+        background-image: url("frog.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    &--about-me {}
+
+    &__title {
+        text-decoration: underline;
+    }
+
+    &__details {}
+
+    &__info-detail {
+        &--phone {
+            font-weight: bold;
+            color: $phoneColor;
+        }
+
+        &--email {
+            color: $emailColor;
+
+        }
+    }
+
+
+
+    &__text {
+        font-style: italic;
+
+    }
+
+}
+
+
+.one-article {
+    padding: $articlesPagePadding;
+    display: flex;
+    margin: 2rem 3rem 0rem 3rem;
+    border: 1px solid black;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        margin-top: 2rem;
+        text-decoration: underline;
+        font-size: 1.3rem;
+        color: black;
+        text-transform: $uppercaseTransform;
+    }
+
+    &__title:hover {
+        background-color: $articleTitleHover;
+    }
+
+    &__text {
+        font-size: 1.1rem;
+    }
+}
+
+.one-article-image {
+    float: left;
+    align-self: flex-end;
+
+}
+
+.articles-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+
+    &__articles-info-title {
+        @include main-text-title;
+    }
+
+    &__articles-info-text {
+        @include main-text;
+    }
+
+}
+
+.articles-svg {
+    padding: $articlesPagePadding;
+    height: 300px;
+    overflow: hidden;
+
+}
+
+.articles-svg picture {
+    width: 100%;
+}
+
+
+
+
+.footer-aboutme {
+    background-color: $footerColor;
+
+    &__email {
+        color: $emailColor;
+    }
+
+    &__phone {
+        color: $phoneColor;
+    }
+}
+
+.info-box {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: $standardGap;
+    padding: $aboutmePagePadding;
+    max-height: 800px;
+
+    &__aboutme-text {
+        @include main-text;
+        overflow: auto;
+    }
+
+    &__aboutme-obrazek {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .info-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+
+    .articles-svg {
+        padding-bottom: 75%;
+        overflow: unset;
+
+    }
+
+    .articles-svg picture {
+        width: 100%;
+        height: auto;
+    }
+
+
+}
